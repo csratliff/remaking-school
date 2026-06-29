@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Remaking School</title>
+<meta name="description" content="Get in touch with Remaking School to discuss advisory work for learner-centered school design.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="topbar"></div>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Remaking School home">
+        <span class="mono" aria-hidden="true">RS</span>
+        <span class="brand-name">Remaking School</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#approach">Approach</a>
+        <a href="index.html#founder">Founder</a>
+        <a href="index.html#engagements">Engagements</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════ CONTACT HERO ═══════════ -->
+    <section class="hero hero--short">
+      <div class="wrap">
+        <p class="eyebrow reveal">Contact</p>
+        <h1 class="hero-headline hero-headline--small reveal">Let's talk about what you're building.</h1>
+        <p class="hero-sub reveal">Whether you're a superintendent thinking through a district-wide shift, a principal redesigning your school's core structures, or an organization supporting school transformation — I'd like to hear what's in front of you.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ CONTACT FORM ═══════════ -->
+    <section class="section section--line">
+      <div class="wrap">
+        <div class="contact-grid">
+
+          <div class="contact-form-wrap reveal">
+            <!-- 
+              FORM SETUP: This form uses Formspree (free tier handles 50 submissions/month).
+              1. Go to formspree.io and create a free account
+              2. Create a new form and copy your form endpoint
+              3. Replace "YOUR_FORMSPREE_ENDPOINT" below with your actual endpoint
+                 (it will look like: https://formspree.io/f/xabcdefg)
+            -->
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="contact-form">
+              
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="organization">Organization</label>
+                <input type="text" id="organization" name="organization">
+              </div>
+
+              <div class="form-group">
+                <label for="role">Your role</label>
+                <select id="role" name="role">
+                  <option value="">Select one...</option>
+                  <option value="superintendent">Superintendent / Central Office</option>
+                  <option value="principal">Principal / School Leader</option>
+                  <option value="district-leader">District Leader</option>
+                  <option value="organization">Organization / Foundation</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="interest">What are you working on?</label>
+                <textarea id="interest" name="interest" rows="5" placeholder="Tell me about the challenge or opportunity in front of you..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="timeline">Timeline</label>
+                <select id="timeline" name="timeline">
+                  <option value="">Select one...</option>
+                  <option value="exploring">Just exploring</option>
+                  <option value="this-quarter">This quarter</option>
+                  <option value="next-quarter">Next quarter</option>
+                  <option value="next-school-year">Next school year</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn">Send message</button>
+            </form>
+          </div>
+
+          <div class="contact-sidebar reveal">
+            <div class="sidebar-block">
+              <p class="sidebar-label">What to expect</p>
+              <p class="sidebar-text">I read every message personally. If there's a fit, we'll schedule a call to talk through what you're facing and whether the work makes sense. No pitch deck, no pressure — just a conversation.</p>
+            </div>
+
+            <div class="sidebar-block">
+              <p class="sidebar-label">Typical engagements</p>
+              <ul class="sidebar-list">
+                <li>Ongoing coaching for principals and leadership teams</li>
+                <li>Cohort facilitation for school networks</li>
+                <li>Strategic advising on learner-centered model design</li>
+                <li>Executive coaching for superintendents</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="mono" aria-hidden="true">RS</span>
+        <span class="fn">Remaking School</span>
+      </div>
+      <p class="footer-meta">
+        Advisory for learner-centered school design<br>
+        remakingschool.com
+      </p>
+    </div>
+  </footer>
+
+  <!-- scroll-reveal animation -->
+  <script>
+    document.documentElement.classList.add('js');
+    (function(){
+      var els = document.querySelectorAll('.reveal');
+      if(!('IntersectionObserver' in window)){
+        els.forEach(function(el){el.classList.add('is-visible');});
+        return;
+      }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, {rootMargin:'0px 0px -8% 0px', threshold:0.1});
+      els.forEach(function(el){io.observe(el);});
+    })();
+  </script>
+
+</body>
+</html>
