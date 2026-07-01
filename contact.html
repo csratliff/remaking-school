@@ -4,14 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Remaking School</title>
-<meta name="description" content="Get in touch with Remaking School to discuss advisory work for learner-centered school design.">
+<meta name="description" content="Get in touch with Remaking School about leadership coaching, strategic advising, or speaking engagements.">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* contact form styles */
+.form-section{padding-top:var(--pad-y);padding-bottom:var(--pad-y);}
+.form-inner{max-width:560px;}
+.form-intro{margin-bottom:40px;}
+
+.contact-form{display:grid;gap:24px;}
+.form-group{display:flex;flex-direction:column;gap:8px;}
+.form-group label{
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--navy);
+  font-weight:600;
+}
+.form-group input,
+.form-group textarea,
+.form-group select{
+  font-family:var(--sans);
+  font-size:16px;
+  padding:14px 16px;
+  border:1px solid rgba(31,36,43,.2);
+  background:#fff;
+  color:var(--ink);
+  border-radius:0;
+  -webkit-appearance:none;
+  transition:border-color .2s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+  outline:none;
+  border-color:var(--navy);
+}
+.form-group textarea{
+  min-height:160px;
+  resize:vertical;
+  line-height:1.6;
+}
+.form-group select{
+  cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23232D4B' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 16px center;
+  padding-right:44px;
+}
+
+.form-submit{
+  font-family:var(--sans);
+  font-size:13px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--cream);
+  background:var(--navy);
+  border:1px solid var(--navy);
+  padding:16px 32px;
+  cursor:pointer;
+  transition:background .2s ease;
+  justify-self:start;
+}
+.form-submit:hover{
+  background:var(--maroon);
+  border-color:var(--maroon);
+}
+.form-submit:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:4px;
+}
+
+.back-link{
+  display:inline-block;
+  margin-top:32px;
+  font-family:var(--sans);
+  font-size:13px;
+  color:var(--navy-400);
+  text-decoration:none;
+  border-bottom:1px solid rgba(35,45,75,.3);
+}
+.back-link:hover{
+  color:var(--maroon);
+  border-bottom-color:var(--maroon);
+}
+</style>
 </head>
 <body>
 
   <div class="topbar"></div>
 
-  <!-- ═══════════ HEADER ═══════════ -->
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="Remaking School home">
@@ -20,7 +104,7 @@
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="index.html#approach">Approach</a>
-        <a href="index.html#founder">Founder</a>
+        <a href="index.html#team">Team</a>
         <a href="index.html#engagements">Engagements</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -28,102 +112,69 @@
   </header>
 
   <main>
-
-    <!-- ═══════════ CONTACT HERO ═══════════ -->
-    <section class="hero hero--short">
+    <section class="form-section">
       <div class="wrap">
-        <p class="eyebrow reveal">Contact</p>
-        <h1 class="hero-headline hero-headline--small reveal">Let's talk about what you're building.</h1>
-        <p class="hero-sub reveal">Whether you're a superintendent thinking through a district-wide shift, a principal redesigning your school's core structures, or an organization supporting school transformation — I'd like to hear what's in front of you.</p>
-      </div>
-    </section>
-
-    <!-- ═══════════ CONTACT FORM ═══════════ -->
-    <section class="section section--line">
-      <div class="wrap">
-        <div class="contact-grid">
-
-          <div class="contact-form-wrap reveal">
-            <!-- 
-              FORM SETUP: This form uses Formspree (free tier handles 50 submissions/month).
-              1. Go to formspree.io and create a free account
-              2. Create a new form and copy your form endpoint
-              3. Replace "YOUR_FORMSPREE_ENDPOINT" below with your actual endpoint
-                 (it will look like: https://formspree.io/f/xabcdefg)
-            -->
-            <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="contact-form">
-              
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-
-              <div class="form-group">
-                <label for="organization">Organization</label>
-                <input type="text" id="organization" name="organization">
-              </div>
-
-              <div class="form-group">
-                <label for="role">Your role</label>
-                <select id="role" name="role">
-                  <option value="">Select one...</option>
-                  <option value="superintendent">Superintendent / Central Office</option>
-                  <option value="principal">Principal / School Leader</option>
-                  <option value="district-leader">District Leader</option>
-                  <option value="organization">Organization / Foundation</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="interest">What are you working on?</label>
-                <textarea id="interest" name="interest" rows="5" placeholder="Tell me about the challenge or opportunity in front of you..."></textarea>
-              </div>
-
-              <div class="form-group">
-                <label for="timeline">Timeline</label>
-                <select id="timeline" name="timeline">
-                  <option value="">Select one...</option>
-                  <option value="exploring">Just exploring</option>
-                  <option value="this-quarter">This quarter</option>
-                  <option value="next-quarter">Next quarter</option>
-                  <option value="next-school-year">Next school year</option>
-                </select>
-              </div>
-
-              <button type="submit" class="btn">Send message</button>
-            </form>
+        <div class="form-inner">
+          <div class="form-intro">
+            <p class="eyebrow">Start a conversation</p>
+            <h1 class="section-head">Get in touch.</h1>
+            <p class="lede">If you're building a learning-centric model — or trying to make one hold — tell us what you're working on.</p>
           </div>
 
-          <div class="contact-sidebar reveal">
-            <div class="sidebar-block">
-              <p class="sidebar-label">What to expect</p>
-              <p class="sidebar-text">I read every message personally. If there's a fit, we'll schedule a call to talk through what you're facing and whether the work makes sense. No pitch deck, no pressure — just a conversation.</p>
+          <!-- 
+            FORMSPREE SETUP:
+            1. Go to formspree.io and create a free account
+            2. Create a new form and copy your endpoint (looks like: https://formspree.io/f/xxxxxxxx)
+            3. Replace YOUR_FORMSPREE_ENDPOINT below with your endpoint
+            4. Formspree will email submissions to your account email (or configure to send to gmail)
+          -->
+          <form class="contact-form" action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+            
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
             </div>
 
-            <div class="sidebar-block">
-              <p class="sidebar-label">Typical engagements</p>
-              <ul class="sidebar-list">
-                <li>Ongoing coaching for principals and leadership teams</li>
-                <li>Cohort facilitation for school networks</li>
-                <li>Strategic advising on learner-centered model design</li>
-                <li>Executive coaching for superintendents</li>
-              </ul>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
             </div>
-          </div>
 
+            <div class="form-group">
+              <label for="organization">Organization</label>
+              <input type="text" id="organization" name="organization">
+            </div>
+
+            <div class="form-group">
+              <label for="interest">I'm interested in</label>
+              <select id="interest" name="interest">
+                <option value="">Select one...</option>
+                <option value="Leadership coaching">Leadership coaching</option>
+                <option value="Strategic advising">Strategic advising</option>
+                <option value="Hub & network leadership">Hub & network leadership</option>
+                <option value="Cohort facilitation">Cohort facilitation</option>
+                <option value="Keynote or presentation">Keynote or presentation</option>
+                <option value="Something else">Something else</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell us about your work</label>
+              <textarea id="message" name="message" required placeholder="What are you building? What's the challenge you're facing?"></textarea>
+            </div>
+
+            <!-- Honeypot for spam prevention -->
+            <input type="text" name="_gotcha" style="display:none">
+
+            <button type="submit" class="form-submit">Send message</button>
+          </form>
+
+          <a href="index.html" class="back-link">← Back to home</a>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- ═══════════ FOOTER ═══════════ -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -131,29 +182,12 @@
         <span class="fn">Remaking School</span>
       </div>
       <p class="footer-meta">
-        Advisory for learner-centered school design<br>
-        remakingschool.com
+        Remaking School, LLC<br>
+        Advisory for learning-centric school design<br>
+        <a href="https://www.linkedin.com/in/chadsratliff/">LinkedIn</a> · remakingschool.com
       </p>
     </div>
   </footer>
-
-  <!-- scroll-reveal animation -->
-  <script>
-    document.documentElement.classList.add('js');
-    (function(){
-      var els = document.querySelectorAll('.reveal');
-      if(!('IntersectionObserver' in window)){
-        els.forEach(function(el){el.classList.add('is-visible');});
-        return;
-      }
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
-        });
-      }, {rootMargin:'0px 0px -8% 0px', threshold:0.1});
-      els.forEach(function(el){io.observe(el);});
-    })();
-  </script>
 
 </body>
 </html>
