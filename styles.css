@@ -265,6 +265,7 @@ p:last-child{margin-bottom:0;}
 }
 .contact-meta a{color:var(--maroon);text-decoration:none;border-bottom:1px solid rgba(110,27,44,.3);}
 .contact-meta a:hover{border-bottom-color:var(--maroon);}
+.contact-meta .linkedin{margin-left:0;}
 
 /* ---------- footer ---------- */
 .site-footer{border-top:1px solid rgba(31,36,43,.12);}
@@ -276,6 +277,8 @@ p:last-child{margin-bottom:0;}
 .footer-brand .mono{width:34px;height:34px;font-size:15px;}
 .footer-brand .fn{font-family:var(--serif);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);}
 .footer-meta{font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;color:var(--mortar);line-height:1.7;text-align:right;}
+.footer-meta a{color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(35,45,75,.3);}
+.footer-meta a:hover{color:var(--maroon);border-bottom-color:var(--maroon);}
 
 /* ---------- reveal-on-scroll animation ---------- */
 .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
