@@ -399,7 +399,36 @@ p:last-child{margin-bottom:0;}
   .arc-step{border-right:0;border-bottom:1px solid rgba(31,36,43,.12);}
   .arc-step:last-child{border-bottom:0;}
   .principle{grid-template-columns:1fr;gap:6px;}
+  .cform .row2{grid-template-columns:1fr;}
 }
 @media (max-width:600px){
   .audit{padding:22px 20px;}
 }
+
+/* ---------- generative definition line (framework section) ---------- */
+.defline{
+  font-family:var(--serif);font-style:italic;font-size:1.14rem;line-height:1.6;
+  color:var(--navy-400);margin:-6px 0 28px;max-width:58ch;
+}
+.defline strong{font-style:normal;font-weight:500;color:var(--maroon);letter-spacing:.03em;}
+.defline span{
+  font-family:var(--sans);font-style:normal;font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--mortar);
+}
+
+/* ---------- contact form ---------- */
+.cform{margin-top:30px;display:grid;gap:16px;}
+.cform label{
+  font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--navy-400);font-weight:600;display:block;margin-bottom:7px;
+}
+.cform input,.cform textarea{
+  width:100%;font-family:var(--sans);font-size:14.5px;color:var(--ink);
+  background:transparent;border:1px solid rgba(31,36,43,.22);
+  padding:13px 14px;border-radius:0;
+}
+.cform input:focus,.cform textarea:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold);}
+.cform textarea{min-height:140px;resize:vertical;}
+.cform .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.cform .btn{cursor:pointer;font-family:var(--sans);}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden;}
